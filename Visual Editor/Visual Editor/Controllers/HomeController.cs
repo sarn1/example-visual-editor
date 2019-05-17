@@ -15,9 +15,16 @@ namespace Visual_Editor.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+
+        [HttpPost]
+        public IActionResult Results()
         {
-            return View();
+            ResultsViewModel Model = new ResultsViewModel()
+            {
+                Text = Request.Form["text"]
+            };
+
+            return View(Model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

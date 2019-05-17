@@ -1,0 +1,14 @@
+﻿@model Visual_Editor.Models.ResultsViewModel
+@{
+    ViewData["Title"] = "Results";
+}
+
+<h1>Results</h1>
+
+@Html.Raw(Model.Text)
+
+<hr>
+
+<code>
+    @Html(Model.Text)
+</code>

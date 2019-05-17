@@ -2,7 +2,24 @@
     ViewData["Title"] = "Home Page";
 }
 
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        height: 500,
+        plugins: 'lists advlist image imagetools'
+    });
+</script>
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+    <form method="post" action="/Home/Results">
+        <textarea name="text">
+        <p><img src="https://tinymce.com/images/glyph-tinymce@2x.png" alt="TinyMCE Logo" width="110" height="97" /></p>
+        <p>Hello, World!</p>
+      </textarea>
+        <input type="submit" />
+    </form>
+
 </div>
