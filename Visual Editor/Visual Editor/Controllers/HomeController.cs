@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Visual_Editor.Models;
+using System.Web;
 
 namespace Visual_Editor.Controllers
 {
@@ -21,7 +22,9 @@ namespace Visual_Editor.Controllers
         {
             ResultsViewModel Model = new ResultsViewModel()
             {
-                Text = Request.Form["text"]
+                Text = Request.Form["text"],
+                TextEncoded = HttpUtility.HtmlEncode(Request.Form["text"])
+                
             };
 
             return View(Model);
